@@ -1,11 +1,12 @@
 const { Server } = require("socket.io");
 const { favoriteSet, favoriteTerm } = require("./socket.handlers");
 const { authSocket } = require("./socket.mw");
+const { WEB_URL, NODE_ENV } = process.env;
 
 module.exports = (server) => {
   const io = new Server(server, {
     cors: {
-      origin: process.env.WEB_URL,
+      origin: NODE_ENV === "production" ? WEB_URL : "http://localhost:3000",
     },
   });
   console.log("Connected to Socket.io...");
