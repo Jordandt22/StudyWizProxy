@@ -37,7 +37,7 @@ if (!isProduction) {
 // Mongoose Connection
 connectMongoose();
 
-const timeLimit = 1000 * 60 * 5;
+const timeLimit = 1000 * 60;
 const limiter = rateLimiter({
   windowMs: timeLimit,
   max: 250,
