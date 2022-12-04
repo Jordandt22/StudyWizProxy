@@ -79,3 +79,6 @@ server.listen(PORT, () => {
   console.log(`CORS Enabled Server, Listening to port: ${PORT}...`);
 });
 connectSocket(server);
+
+// Export the Express API
+module.exports = server;
