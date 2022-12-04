@@ -81,4 +81,4 @@ server.listen(PORT, () => {
 connectSocket(server);
 
 // Export the Express API
-module.exports = server;
+module.exports = app;
